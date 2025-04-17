@@ -1,0 +1,13 @@
+{
+  "ru": {
+    "back": " ⬅ Назад",
+    "ch_translate": "Изменить перевод",
+    "user_bc_about": "Рассылка сообщений",
+    "old_msg": "Сообщение устарело. Откройте меню заново"
+  },
+  "en": {
+    "back": " ⬅ Back",
+    "ch_translate": "Change translate text",
+    "user_bc_about": "You can send a message to all user"
+  }
+}

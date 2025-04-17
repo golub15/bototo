@@ -1,0 +1,9 @@
+[project]
+name = "bototo"
+version = "0.1.0"
+description = "Add your description here"
+requires-python = ">=3.13"
+dependencies = [
+    "aiogram-dialog>=2.3.1",
+    "pydantic>=2.11.3",
+]
