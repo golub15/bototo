@@ -6,7 +6,7 @@ from tortoise.models import Model
 from tortoise import fields
 
 
-class OrmUserBot(Model):
+class BaseOrmUserBot(Model):
     id = fields.BigIntField(pk=True)
     telegram_id = fields.BigIntField()
     full_name = fields.CharField(default="", max_length=255)
@@ -22,7 +22,7 @@ class OrmUserBot(Model):
         abstract = True
 
 
-def _to_db_user_data(user: OrmUserBot) -> UserDbData:
+def _to_db_user_data(user: BaseOrmUserBot) -> UserDbData:
     return UserDbData(
         id=user.id,
         tg_id=user.telegram_id,
@@ -35,9 +35,9 @@ def _to_db_user_data(user: OrmUserBot) -> UserDbData:
 
 
 class TortoiseDb(DbProtocol):
-    user_model: OrmUserBot
+    user_model: BaseOrmUserBot
 
-    def __init__(self, user_model: [OrmUserBot]):
+    def __init__(self, user_model: [BaseOrmUserBot]):
         self.user_model = user_model
 
     async def count_all_user(self) -> int:
